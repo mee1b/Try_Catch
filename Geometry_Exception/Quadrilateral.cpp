@@ -26,7 +26,7 @@ Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
 		get_side(a, b, c, d);
 		print_info();
 	}
-	catch (const exception_5& ex)
+	catch (const Figure_exception& ex)
 	{
 		std::cout << ex.what() << std::endl;
 	}
@@ -44,7 +44,7 @@ void Quadrilateral::get_corner(int a, int b, int c, int d)
 	corner_b = b;
 	corner_c = c;
 	corner_d = d;
-	if (corner_a + corner_b + corner_c + corner_d != 360) throw exception_5::exception_5();
+	if (corner_a + corner_b + corner_c + corner_d != 360) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: сумма углов не равна 360 градусов!\n");
 }
 void Quadrilateral::print_info() const
 {

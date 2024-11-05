@@ -15,7 +15,7 @@ Parallelogram::Parallelogram(int a, int b, int c, int d, int A, int B, int C, in
 		get_side(a, b, c, d);
 		print_info();
 	}
-	catch (const exception_8& ex)
+	catch (const Figure_exception& ex)
 	{
 		std::cout << ex.what() << std::endl;
 	}
@@ -26,8 +26,8 @@ void Parallelogram::get_side(int a, int b, int c, int d)
 	side_b = b;
 	side_c = c;
 	side_d = d;
-	if ((side_a != side_c) && (side_b != side_d)) throw exception_8::exception_8();
-	if ((side_a == side_d) && (side_b == side_c)) throw exception_8::exception_8();
+	if ((side_a != side_c) && (side_b != side_d)) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: стороны а и с, либо стороны b и d не равны!\n");
+	if ((side_a == side_d) && (side_b == side_c)) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: стороны а и с, либо стороны b и d не равны!\n");
 }
 void Parallelogram::get_corner(int a, int b, int c, int d)
 {
@@ -35,6 +35,6 @@ void Parallelogram::get_corner(int a, int b, int c, int d)
 	corner_b = b;
 	corner_c = c;
 	corner_d = d;
-	if ((corner_a != corner_c) && (corner_b != corner_d)) throw exception_8::exception_8();
-	if ((corner_a == corner_d) && (corner_b == corner_c))throw exception_8::exception_8();
+	if ((corner_a != corner_c) && (corner_b != corner_d)) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: углы А и B, не равны углам C и D соответственно!\n");
+	if ((corner_a == corner_d) && (corner_b == corner_c)) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: углы А и B, не равны углам C и D соответственно!\n");
 }

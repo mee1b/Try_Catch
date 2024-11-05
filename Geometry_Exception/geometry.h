@@ -1,5 +1,5 @@
 #pragma once
-#pragma once
+
 class Triangle
 {
 protected:
@@ -18,8 +18,9 @@ class Equilateral_triangle : public Triangle
 {
 public:
 	Equilateral_triangle(int a, int b, int c, int A, int B, int C);
-	void get_side(int a, int b, const int) override;
-	void get_corner(int a, int b, int c) override;
+	void get_side(int a, int b, const int);
+	void get_corner(int a, int b, int c);
+	void print_info() const;
 };
 
 class Isosceles_triangle : public Triangle

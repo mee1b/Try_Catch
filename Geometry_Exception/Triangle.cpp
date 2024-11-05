@@ -21,7 +21,7 @@ Triangle::Triangle(int a, int b, int c, int A, int B, int C)
 		get_side(a, b, c);
 		print_info();
 	}
-	catch (const exception_1& ex)
+	catch (const Figure_exception& ex)
 	{
 		std::cout << ex.what() << std::endl;
 	}
@@ -38,7 +38,7 @@ void Triangle::get_corner(int a, int b, int c)
 	corner_a = a;
 	corner_b = b;
 	corner_c = c;
-	if (corner_a + corner_b + corner_c != 180) throw exception_1::exception_1();
+	if (corner_a + corner_b + corner_c != 180) throw Figure_exception::Figure_exception("Ошибка создания фигуры. Причина: сумма углов не равна 180 градусов!\n");
 }
 void Triangle::print_info() const
 {
