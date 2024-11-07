@@ -9,16 +9,9 @@ Rectangle::Rectangle()
 Rectangle::Rectangle(int a, int b, int c, int d, int A, int B, int C, int D)
 {
 	name = "Прямоугольник";
-	try
-	{
-		get_corner(A, B, C, D);
-		get_side(a, b, c, d);
-		print_info();
-	}
-	catch (const Figure_exception& ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
+	get_corner(A, B, C, D);
+	get_side(a, b, c, d);
+	print_info();
 }
 void Rectangle::get_side(int a, int b, int c, int d)
 {

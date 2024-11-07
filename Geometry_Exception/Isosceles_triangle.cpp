@@ -7,16 +7,9 @@
 Isosceles_triangle::Isosceles_triangle(int a, int b, int c, int A, int B, int C)
 {
 	name = "Равнобедренный треугольник";
-	try
-	{
-		get_corner(A, B, C);
-		get_side(a, b, c);
-		print_info();
-	}
-	catch (const Figure_exception& ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
+	get_corner(A, B, C);
+	get_side(a, b, c);
+	print_info();
 }
 void Isosceles_triangle::get_side(int a, int b, int c)
 {

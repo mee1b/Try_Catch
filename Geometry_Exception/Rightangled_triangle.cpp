@@ -6,16 +6,9 @@
 Rightangled_triangle::Rightangled_triangle(int a, int b, int c, int A, int B, int C)
 {
 	name = "Прямоугольный треугольник";
-	try
-	{
-		get_corner(A, B, C);
-		get_side(a, b, c);
-		print_info();
-	}
-	catch (const Figure_exception& ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
+	get_corner(A, B, C);
+	get_side(a, b, c);
+	print_info();
 }
 void Rightangled_triangle::get_corner(int a, int b, int c)
 {
